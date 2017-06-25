@@ -1,4 +1,4 @@
-tail -n+2 /data/’Hospital General Information.csv' > /data/hospital.csv
+tail -n+2 /data/'Hospital General Information.csv' > /data/hospital.csv
 tail -n+2  /data/'Timely and Effective Care - Hospital.csv' > /data/effective_care.csv
 tail -n+2  /data/'Readmissions and Deaths - Hospital.csv' > /data/readmissions.csv
 tail -n+2 'hvbp_hcahps_05_28_2015.csv' > surveys_responses.csv
