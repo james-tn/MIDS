@@ -1,0 +1,21 @@
+a 30-Day Mortality Rate                                         
+1.65	Acute Ischemic Stroke (STK) 30-Day Mortality Rate
+1.60	Heart  Failure (HF) 30-Day Readmission Rate
+1.43	Heart Failure (HF) 30-Day Mortality Rate
+1.33	30-Day All-Cause Unplanned Readmission Following Coronary Artery Bypass Graft Surgery (CABG)
+1.27	Chronic Obstructive Pulmonary Disease (COPD) 30-Day Readmission Rate
+1.25	Acute Myocardial Infarction (AMI) 30-Day Mortality Rate
+1.12	Pneumonia 30-Day Readmission Rate
+1.12	Stroke (STK) 30-Day Readmission Rate
+1.08	Acute Myocardial Infarction (AMI) 30-Day Readmission Rate
+Time taken: 8.748 seconds, Fetched 10 row(s)
+92.84499202206028       Median Time from ED Arrival to ED Departure for Admitted ED Patients
+62.175543613210706	Admit Decision Time to ED Departure Time for Admitted Patients
+40.70685114070903	Median Time from ED Arrival to ED Departure for Discharged ED Patients
+29.515431117460754	Median Time to Transfer to Another Facility for Acute Coronary Intervention- Reporting Rate
+21.9667649570186	Thrombolytic Therapy
+21.856051693544458	Head CT Scan Results for Acute Ischemic Stroke or Hemorrhagic Stroke Patients who Received Head CT or MRI Scan Interpretation Within 45 Minutes of ED Arrival
+23.0	Fibrinolytic Therapy Received within 30 Minutes of Hospital Arrival
+18.182634818838103	Fibrinolytic Therapy Received Within 30 Minutes of ED Arrival
+17.725152236733287	Median Time to Pain Management for Long Bone Fracture
+16.884570242864964	Median Time from ED Arrival to Provider Contact for ED patients
