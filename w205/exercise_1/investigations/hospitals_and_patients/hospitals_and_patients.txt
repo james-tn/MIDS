@@ -1,3 +1,31 @@
-s code is to select the average score and total of base score and consistency. The Patient Experience of Care Domain Score is the sum of the HCAHPS Base Score (0 – 80 points) and HCAHPS Consistency Points score (0 – 20 points), thus ranges from 0 to 100 points, 
+
+ 
+1. Finding the correlation between survey result and quality score
+
+The code is to select the average score and total of base score and consistency. The Patient Experience of Care Domain Score is the sum of the HCAHPS Base Score (0 – 80 points) and HCAHPS Consistency Points score (0 – 20 points), thus ranges from 0 to 100 points, 
 http://www.hcahpsonline.org/files/HCAHPS%20Fact%20Sheet%20May%202012.pdf.
-Here I use 1/avg_score because the for avg score from the readmission measure the lower the better.
+
+
+
+Here I use 1/avg_score because the for avg score from the readmission measure the lower the better so 1/avg_score means the higher the better for quality.
+
+The query which is used in the python code is
+
+"select a.provider_id, 1/avg_score avg_score, HCAHPS_Base_Score +HCAHPS_Consistency_Score Score from SURVEYS_RESPONSES_TRANSFORMED a, (select avg(score) avg_score, provider_id from readmissions_transformed group by provider_id) b where a.provider_id = b.provider_id" 
+
+The result comes up at about 34%. 
+This means that customer’s perception and quality measurement has certain level of correlation. Quality improvement across the different measures does have positive relationship (34% correlation coefficient) with customer experience rating.
+
+
+2. Finding the correlation between variability of procedures and survey result
+
+Using the same approach, I now examine the relationship between the procedural variability within each hospital and the customer experience rating.
+Because measures have different scales so it does not make sense to use the score as is.
+So I use max min rescaling to put different measures into scale before calculating the variability.
+The SQL for the python code is below
+
+"select a.provider_id, stddev, avg_score avg_score from  (select stddev_pop((score - mi)/(mx-mi)) stddev, a.provider_id from effective_care_transformed a,(select max(score) mx, min(score) mi,measure_id from effective_care_transformed group by measure_id) maxmin where a.measure_id = maxmin.measure_id group by a.provider_id) a, (select avg(score) avg_score, provider_id from readmissions_transformed group by provider_id order by provider_id) b where a.provider_id = b.provider_id order by a.provider_id"
+
+The result come up at -0.014 or -1.4%. This means there’s just a tiny negative correlation, meaning the more inconsistent are the procedures within a hospital, the more (though just a tiny) negatively it can impact to customer experience.
+However, the result is so small that this effect is negligible.
+Conclusion: we see almost no correlation between procedural variability and customer experience rating.
