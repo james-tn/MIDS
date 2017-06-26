@@ -1,0 +1,3 @@
+s code is to select the average score and total of base score and consistency. The Patient Experience of Care Domain Score is the sum of the HCAHPS Base Score (0 – 80 points) and HCAHPS Consistency Points score (0 – 20 points), thus ranges from 0 to 100 points, 
+http://www.hcahpsonline.org/files/HCAHPS%20Fact%20Sheet%20May%202012.pdf.
+Here I use 1/avg_score because the for avg score from the readmission measure the lower the better.
