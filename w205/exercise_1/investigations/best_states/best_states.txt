@@ -1,19 +1,35 @@
-O
-13.5	4.66	4,176.6	309	UT
-13.7	5.29	9,522.6	697	MA
-13.7	4.96	9,691.9	708	AZ
-13.7	4.94	3,904.6	285	NH
-13.7	4.80	3,600.7	263	ID
-13.8	5.21	23,589.7	1713	OH
-13.8	5.18	4,916.1	357	CT
-13.8	5.12	24,765.4	1801	PA
-13.8	5.08	18,323.8	1329	MI
-13.8	5.05	44,631.6	3236	CA
-13.8	4.97	43,584.3	3164	TX
-13.9	5.21	30,193.2	2166	FL
-13.9	4.96	17,114.1	1230	IN
-13.9	4.93	9,090.9	652	SC
-13.9	4.83	16,370.3	1180	WI
-13.9	4.83	11,364.4	816	MN
-13.9	4.82	2,020.5	145	HI
-13.9	4.72	11,068.7	794	WA
+
+1. Best Hospitals
+
+Below table is the top 20 best hospitals from the dataset.
+
+
+ 	avg	stddev	agg_score    m_count   State
+0	13.4	4.90	1,086.6		81	DE
+1	13.5	4.69	8,326.3		617	CO
+2	13.5	4.66	4,176.6		309	UT
+3	13.7	5.29	9,522.6		697	MA
+4	13.7	4.96	9,691.9		708	AZ
+5	13.7	4.94	3,904.6		285	NH
+6	13.7	4.80	3,600.7		263	ID
+7	13.8	5.21	23,589.7	1713	OH
+8	13.8	5.18	4,916.1		357	CT
+9	13.8	5.12	24,765.4	1801	PA
+10	13.8	5.08	18,323.8	1329	MI
+11	13.8	5.05	44,631.6	3236	CA
+12	13.8	4.97	43,584.3	3164	TX
+13	13.9	5.21	30,193.2	2166	FL
+14	13.9	4.96	17,114.1	1230	IN
+
+Approach: the ranking is based on average measure’s score of states, the lower the better.
+However, I only consider states with minimum number of reported measures because there’re states with just a few measures reported and it’s not fair to compare them with hospitals where there’re many measures included. After examining the database, I think 40 is a reasonable minimum to set the bar.
+
+
+2: What states are models of high-quality care? That is, which hospitals have the most consistently high scores for a variety of procedures.
+I pick 4 states with high ranking (<10) but lower variations across measures. These are models of high quality care service states. They are:
+
+
+1. DE
+2. CO
+3. UT
+4. ID

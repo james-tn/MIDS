@@ -22,7 +22,7 @@ Below table is the top 20 best hospitals from the dataset.
 14	13.5	4.95	942.5	70	ST JOSEPH MEDICAL CENTER
 
 Approach: the ranking is based on average measure’s score of hospital, the lower the better.
-However, I only consider hospital with minimum number of reported measures because there’re hospitals with just a few measures reported and it’s not fair to compare them with hospitals where there’re many measures included. After examining the databse, I think 25 is a reasonable minimum to set the bar.
+However, I only consider hospitals with minimum number of reported measures because there’re hospitals with just a few measures reported and it’s not fair to compare them with hospitals where there’re many measures included. After examining the database, I think 25 is a reasonable minimum to set the bar.
 
 
 2: What hospitals are models of high-quality care? That is, which hospitals have the most consistently high scores for a variety of procedures.
