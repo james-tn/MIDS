@@ -1,0 +1,39 @@
+1. How many rows are missing a value in the "State" column? Explain how you came up with the number.
+Answer: There are 5377 rows with blank value in State column. This comes from (blank) value with number of rows associated with the value in the drop down listbox for the facet.
+
+2. How many rows with missing ZIP codes do you have?
+
+Answer: there’re 4362 rows with blank zip code
+
+3. If you consider all ZIP codes less than 99999 to be valid, how many valid and invalid ZIP codes do you have, respectively?
+
+Number of valid zip codes: 345,142
+Number of invalid zip codes: 34944+4362 =39,306
+
+4. Change the radius to 3.0. What happens? Do you want to merge any of the resulting matches?
+2 new pairs appear: Indonesia + Micronesia and Pakistan + Tajikistan. These are not the result that should be merged because they represent separate entities
+
+5. Change the block size to 2. Give two examples of new clusters that may be worth merging.
+
+With block char of 2, following are good candidates for merging
+
+California(84 rows)
+Caliofrnia(1 rows)
+Calfiornia(1 rows)
+Cailfornia(1 rows)
+
+-> Merge to California
+
+Alaska(791 rows)
+alaska(4 rows)
+Alska(1 rows)
+-> merge to Alaska
+
+6. Explain in words what happens when you cluster the "place" column, and why you think that happened. What additional functionality could OpenRefine provide to possibly deal with the situation?
+
+Some of the nearest neighbor algorithms do not give result because of long execution time. Key collision algorithm give results.
+However, when cancel the long running algorithm then come back with the algorithm that produce results before, it no longer gives result. This is probably due the underlying process still runs. So a suggestion is for the software to improve job/task management so that when a job is cancelled, it’s really cancelled.
+
+7. The result from the python is 3 and the matrix calculation is also 3.
+(for 2 words gumbarrel" and "gunbarell)
+
