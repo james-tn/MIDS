@@ -54,11 +54,10 @@ cur.execute("UPDATE tweetwordcount SET count=%s WHERE word=%s", (uCount, uWord))
 conn.commit()
 
 #Select
-cur.execute("SELECT word, count from tweetwordcount")
+cur.execute("SELECT word, count from tweetwordcount where count >=%s and count <=%s”, (lower, upper))
 records = cur.fetchall()
 for rec in records:
-   print "word = ", rec[0]
-   print "count = ", rec[1], "\n"
+   print "word = ", rec[0], “count = ", rec[1], "\n"
 conn.commit()
 
 conn.close()
